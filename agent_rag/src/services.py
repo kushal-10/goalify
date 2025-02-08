@@ -6,11 +6,13 @@ from src.client import client
 from src.functions.lookup_sales import lookupSales
 from src.functions.llm_chat import llm_chat
 
+from src.workflows.pdf import PdfWorkflow
+
 from src.agents.chat_rag import AgentRag
 
 
 async def main():
-    await client.start_service(agents=[AgentRag], functions=[lookupSales, llm_chat])
+    await client.start_service(agents=[AgentRag], functions=[lookupSales, llm_chat], workflows=[PdfWorkflow])
 
 
 def run_services():
