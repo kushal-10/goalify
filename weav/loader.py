@@ -8,13 +8,13 @@ headers = {"X-OpenAI-Api-Key": os.getenv("OPENAI_API_KEY")}
 client = weaviate.connect_to_local( headers=headers)
 
 # Get the collection
-movies = client.collections.get("Book")
+books = client.collections.get("Book")
 
-# print(movies)
+# print(books)
 # Perform query
 query = "What is the main character of the book?"
-response = movies.query.near_text(
-    query="dystopian future", limit=5, return_metadata=wq.MetadataQuery(distance=True)
+response = books.query.near_text(
+    query=query, limit=5, return_metadata=wq.MetadataQuery(distance=True)
 )
 
 # Inspect the response

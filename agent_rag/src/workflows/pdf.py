@@ -1,9 +1,7 @@
 from pydantic import BaseModel, Field
 from typing import List 
-from restack_ai.workflow import workflow, import_functions, log
-from datetime import timedelta
+from restack_ai.workflow import workflow 
 import pymupdf
-import io 
 import requests
 
 class PdfWorkflowInput(BaseModel):
